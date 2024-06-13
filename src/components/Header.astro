@@ -1,0 +1,169 @@
+---
+// src/components/Navbar.astro
+const links = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Tools', href: '/#tools' },
+  { name: 'Work', href: '/#work' },
+  { name: 'Blog', href: '/blog' }
+];
+---
+<nav>
+  <div class="logo">Eleven Cycles</div>
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </label>
+  <div class="nav-container">
+    <ul class="nav-links">
+      {links.map(link => (
+        <li>
+          <a href={link.href}>{link.name}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.507);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    display: inline-block;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+  }
+
+  .nav-links a:hover {
+    color: #007bff;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-toggle:checked + .hamburger div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + .hamburger div:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .hamburger div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  @media (max-width: 1024px) {
+    .hamburger {
+      display: flex;
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    #menu-toggle:checked ~ .nav-container .nav-links {
+      display: flex;
+    }
+
+    .nav-links li {
+      text-align: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links li:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .hamburger {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex !important;
+      flex-direction: row;
+      position: static;
+      background: none;
+      gap: 3rem;
+    }
+  }
+</style>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle && menuToggle.checked) {
+          menuToggle.checked = false;
+        }
+      });
+    });
+  });
+</script>
