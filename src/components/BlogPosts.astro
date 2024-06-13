@@ -1,0 +1,131 @@
+---
+const articles = [
+  {
+    title: "How to Improve Your SEO",
+    description: "Learn the latest techniques to boost your website's SEO and increase organic traffic.",
+    image: "/images/seo.jpg",
+    link: "#"
+  },
+  {
+    title: "The Future of Web Design",
+    description: "Discover the upcoming trends in web design and how to stay ahead of the curve.",
+    image: "/images/web-design.jpg",
+    link: "#"
+  },
+  {
+    title: "Content Marketing Strategies",
+    description: "Effective strategies to enhance your content marketing efforts and drive engagement.",
+    image: "/images/content-marketing.jpg",
+    link: "#"
+  }
+];
+---
+
+<section class="blog-section">
+  <h2 class="section-title">Latest Blog Articles</h2>
+  <div class="blog-cards">
+    {articles.map((article) => (
+      <div class="blog-card">
+        <img src={article.image} alt={article.title} class="blog-image" />
+        <div class="blog-content">
+          <h3 class="blog-title">{article.title}</h3>
+          <p class="blog-description">{article.description}</p>
+          <a href={article.link} class="blog-link">Read More</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .blog-section {
+    padding: 50px 0;
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #e0e0e0, #606060, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  .blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .blog-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .blog-content {
+    padding: 20px;
+  }
+
+  .blog-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff1f71;
+    background: linear-gradient(135deg, #e0e0e0, #606060, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .blog-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .blog-link {
+    text-decoration: none;
+    color: #ff1f71;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .blog-link:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .blog-card {
+      width: 90%;
+      margin: 10px 0;
+    }
+  }
+</style>

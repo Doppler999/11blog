@@ -1,0 +1,82 @@
+---
+const logos = [
+  "/Logos/after-effects-cc-logo-svgrepo-com.svg",
+  "/Logos/aws-s3-logo-svgrepo-com.svg",
+  "/Logos/bmw-2-logo-svgrepo-com.svg",
+  "/Logos/figma-1-logo-svgrepo-com.svg",
+  "/Logos/google-g-2015-logo-svgrepo-com.svg",
+  "/Logos/jagermeister-logo-svgrepo-com.svg",
+  "/Logos/kotlin-1-logo-svgrepo-com.svg",
+  "/Logos/linkedin-icon-2-logo-svgrepo-com.svg",
+  "/Logos/nvidia-logo-svgrepo-com.svg",
+  "/Logos/pinterest-1-logo-svgrepo-com.svg",
+  "/Logos/react-logo-svgrepo-com.svg",
+  "/Logos/redis-logo-svgrepo-com.svg",
+  "/Logos/redux-logo-svgrepo-com.svg",
+  "/Logos/ripple-2-logo-svgrepo-com.svg",
+  "/Logos/rituals-logo-svgrepo-com.svg",
+  "/Logos/shopify-logo-svgrepo-com.svg",
+  "/Logos/tripadvisor-logo-svgrepo-com.svg",
+  "/Logos/ups-united-parcel-service-logo-svgrepo-com.svg",
+  "/Logos/youtube-icon-logo-svgrepo-com.svg"
+];
+---
+
+<section class="carousel-banner">
+  <div class="carousel-container">
+    {logos.concat(logos).map((logo, index) => (
+      <div class="carousel-item">
+        <img src={logo} alt={`Company logo ${index + 1}`} width="50" height="auto" />
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .carousel-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    background-color: #111;
+    padding: 20px 0;
+  }
+
+  .carousel-container {
+    display: flex;
+    animation: scroll 20s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 50px; /* Adjust the width as needed */
+    margin: 0 15px;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      width: 50px; /* Adjust the width for smaller screens */
+      margin: 0 10px;
+    }
+  }
+</style>
+
+<!-- Load non-critical CSS asynchronously -->
+<link rel="preload" href="styles/carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles/carousel.css"></noscript>
