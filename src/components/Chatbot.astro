@@ -1,13 +1,9 @@
----
-// src/components/Chatbot.astro
----
-
-<script is:inline type="module">
+<script type="module">
   function initializeChatbot() {
     import("https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js").then(({ default: Chatbot }) => {
       Chatbot.init({
         chatflowid: "2aa95558-1764-401e-9993-10a380e6599b",
-        apiHost: "http://localhost:3000",
+        apiHost: "https://xavi99-11chatbot.hf.space/",
         chatflowConfig: {
           // topK: 2
         },
