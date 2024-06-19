@@ -83,7 +83,6 @@ const steps = [
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
-    /*border: 0.1px solid; /* Set the width of the border */
   }
 
   .timeline-item.left {
@@ -125,7 +124,6 @@ const steps = [
     position: relative;
     transform: translateX(-20px);
     transition: transform 0.6s ease;
-    border: 1px solid; /* Set the width of the border */
   }
 
   .timeline-item.right .timeline-content {
@@ -215,7 +213,7 @@ const steps = [
   .cta-button-container {
     position: relative;
     width: 250px;
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,21 +271,27 @@ const steps = [
   .cta-button-container::before {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 20%;
     transform: translateX(-50%);
-    bottom: -28px;
-    width: 30px;
-    height: 40px;
+    bottom: -50px;
+    width: 390px;
+    height: 10px;
     background: #ff1f71;
     border-radius: 10px;
     transition: 0.2s;
     transition-delay: 0.2s;
-    box-shadow: 0 0 15px #ff1f71;
+    box-shadow: 0px 15px 25px 25px #ff1f71af;
+    /* box-shadow: 10px 10px 30px 30px rgba(255, 255, 255, 0),
+                        30px 30px 3px 60px rgba(255, 255, 255, 0.2),
+                        30px 30px 3px 90px rgba(255, 255, 255, 0.5),
+                        30px 30px 3px 12px rgba(255, 255, 255, 1); */
+                        clip-path: polygon(50% -500%, 100% 100%, 0% 100%);
+                        transform: translateX(-30%);
   }
 
   .cta-button-container:hover::before {
-    margin-bottom: 5px;
-    height: 100%;
+    bottom: 0;
+    height: 50%;
     width: 80%;
     border-radius: 30px;
     box-shadow: 0 0 65px #ff1f71;

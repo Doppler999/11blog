@@ -3,33 +3,42 @@ const testimonials = [
   {
     text: "We have been working with Eleven Cycles for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Eleven Cycles to any company looking to grow their online presence.",
     author: "John Smith",
-    position: "Marketing Director at XYZ Corp"
+    position: "Marketing Director at XYZ Corp",
   },
   {
     text: "Eleven Cycles transformed our digital marketing strategy and delivered exceptional results. Their innovative approach and dedication have significantly boosted our online engagement and sales. We couldn't be happier with their service.",
     author: "Emily Johnson",
-    position: "CEO at ABC Ltd"
+    position: "CEO at ABC Ltd",
   },
   {
     text: "The team at Eleven Cycles is simply amazing. Their expertise in digital marketing and commitment to our success have helped us achieve our business goals. We highly recommend them to any organization looking for top-notch digital marketing services.",
     author: "Michael Brown",
-    position: "Founder of Tech Innovators Inc"
-  }
+    position: "Founder of Tech Innovators Inc",
+  },
 ];
 ---
 
 <section class="testimonial-section">
   <h2 class="section-title">Testimonials</h2>
-  <p class="testimonial-intro">Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services</p>
+  <p class="testimonial-intro">
+    Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about
+    Our Digital Marketing Services
+  </p>
   <div class="testimonial-card">
     <div class="testimonial-content">
-      {testimonials.map((testimonial, index) => (
-        <div class="testimonial-item" data-index={index} style={`animation-delay: ${index * 15}s`}>
-          <p class="testimonial-text">“{testimonial.text}”</p>
-          <p class="testimonial-author">{testimonial.author}</p>
-          <p class="testimonial-position">{testimonial.position}</p>
-        </div>
-      ))}
+      {
+        testimonials.map((testimonial, index) => (
+          <div
+            class="testimonial-item"
+            data-index={index}
+            style={`animation-delay: ${index * 15}s`}
+          >
+            <p class="testimonial-text">“{testimonial.text}”</p>
+            <p class="testimonial-author">{testimonial.author}</p>
+            <p class="testimonial-position">{testimonial.position}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -42,10 +51,34 @@ const testimonials = [
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
 
+  /* .lamp-shadow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background-color: black;
+    transform: translateX(-50%);
+  }
+
+  .lamp-shadow::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%);
+  } */
+
   .section-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
     background: linear-gradient(135deg, #e0e0e0, #606060, #e0e0e0);
     -webkit-background-clip: text;
@@ -62,22 +95,38 @@ const testimonials = [
   }
 
   .testimonial-card {
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1000px;
+    height: 290px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 16px;
-    border: 1px solid #fff;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    border: 10px solid; /* Set the width of the border */
+    border-image: linear-gradient(
+        45deg,
+        #f3f3f3,
+        #e3e3e3,
+        #d1d1d1,
+        #bdbdbd,
+        #a6a6a6,
+        #8e8e8e,
+        #737373,
+        #595959,
+        #404040
+      )
+      1;
+    /* box-shadow: 200px 150px 250px rgba(255, 170, 170, 0.281); */
+
     position: relative;
     overflow: hidden;
+
   }
 
   .testimonial-content {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,9 +143,17 @@ const testimonials = [
   }
 
   @keyframes show {
-    0% { opacity: 0; }
-    20%, 40% { opacity: 1; }
-    60%, 100% { opacity: 0; }
+    0% {
+      opacity: 0;
+    }
+    20%,
+    40% {
+      opacity: 1;
+    }
+    60%,
+    100% {
+      opacity: 0;
+    }
   }
 
   .testimonial-text {
@@ -119,7 +176,7 @@ const testimonials = [
 
   @media (max-width: 768px) {
     .section-title {
-      font-size: 1.8rem;
+      font-size: 3.5rem;
     }
 
     .testimonial-intro {
@@ -127,7 +184,7 @@ const testimonials = [
     }
 
     .testimonial-card {
-      width: 90%;
+      width: 80%;
     }
 
     .testimonial-text {
@@ -145,16 +202,21 @@ const testimonials = [
 </style>
 
 <!-- Load non-critical CSS asynchronously -->
-<link rel="preload" href="styles/testimonials.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="styles/testimonials.css"></noscript>
+<link
+  rel="preload"
+  href="styles/testimonials.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript><link rel="stylesheet" href="styles/testimonials.css" /></noscript>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const testimonialItems = document.querySelectorAll(".testimonial-item");
     testimonialItems.forEach((item, index) => {
       setTimeout(() => {
         if (item instanceof HTMLElement) {
-          item.style.opacity = '1';
+          item.style.opacity = "1";
         }
       }, index * 15000);
     });

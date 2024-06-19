@@ -17,11 +17,12 @@
       padding: 50px 0;
       background-color: #111;
       color: #fff;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: -10px;
     }
     .section-title {
-      font-size: 5.5rem;
+      font-size: 5rem;
       margin-bottom: 30px;
       background: linear-gradient(135deg, #e0e0e0, #606060, #e0e0e0);
       -webkit-background-clip: text;
@@ -33,7 +34,7 @@
       position: relative;
       width: 90%;
       max-width: 700px;
-      height: 800px;
+      height: 700px;
       margin: auto;
       background-color: rgb(0, 0, 0);
       box-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
@@ -45,7 +46,7 @@
       transition: box-shadow 0.3s ease;
     }
     .card:hover {
-      box-shadow: 0 4px 20px rgba(255, 20, 147, 0.8);
+      box-shadow: 0 4px 20px #ff1f71;
       cursor: pointer;
     }
     .slideshow-container {
@@ -131,11 +132,24 @@
       font-size: 16px;
       margin: 5px 0 0;
     }
-    @media (max-width: 1024px) {
+
+    /* @media (min-width: 1060px) and (max-width: 1600px) {
+      .showcase-section{
+        margin-top: -900px;
+
+}
+
+} */
+    @media (min-width: 1024px) {
       .card {
-        max-width: 600px;
-        height: 600px;
+        max-width: 700px;
+        height: 700px;
       }
+     .showcase-section{
+      margin-top: -190px;
+
+     }
+
       .prev, .next {
         font-size: 16px;
         padding: 14px;
@@ -145,6 +159,7 @@
       }
       .project-title {
         font-size: 20px;
+        /* margin-top: -50px; */
       }
       .project-description {
         font-size: 14px;

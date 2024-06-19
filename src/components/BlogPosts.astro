@@ -3,19 +3,19 @@ const articles = [
   {
     title: "How to Improve Your SEO",
     description: "Learn the latest techniques to boost your website's SEO and increase organic traffic.",
-    image: "/images/seo.jpg",
+    image: "blog-placeholder-3.jpg",
     link: "#"
   },
   {
     title: "The Future of Web Design",
     description: "Discover the upcoming trends in web design and how to stay ahead of the curve.",
-    image: "/images/web-design.jpg",
+    image: "blog-placeholder-4.jpg",
     link: "#"
   },
   {
     title: "Content Marketing Strategies",
     description: "Effective strategies to enhance your content marketing efforts and drive engagement.",
-    image: "/images/content-marketing.jpg",
+    image: "blog-placeholder-5.jpg",
     link: "#"
   }
 ];
@@ -45,21 +45,36 @@ const articles = [
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
   }
 
   .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #e0e0e0, #606060, #e0e0e0);
+    font-size: 4.5rem;
+    font-weight: 200;
+    letter-spacing: 10px;
+    /* animation:glow1 2s infinite alternate ;
+    animation: ; */
+    /* animation-duration: 70s; */
+    margin-bottom: 90px;
+    background: linear-gradient(135deg, #e0e0e0, #9bff10, #e0e0e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 40px rgba(255, 255, 255, 0.5);
     text-align: center;
   }
+  /* @keyframes glow1 {
+            0% {
+                text-shadow: 0 0 2px rgba(207, 255, 96, 0.5), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.2);
+            }
+            100% {
+                text-shadow: 0 0 4px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.5), 0 0 100px rgba(255, 255, 255, 0.4);
+            }
+        } */
 
   @media (max-width: 768px) {
     .section-title {
-      font-size: 1.8rem;
+      font-size: 3.2rem;
+      font-weight: 800;
     }
   }
 
@@ -77,7 +92,7 @@ const articles = [
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
+    width: 400px;
     margin: 10px;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
   }

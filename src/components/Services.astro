@@ -1,15 +1,30 @@
-<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(black,rgb(17, 16, 16),rgb(18, 16, 16),black);">
+<div
+  style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(black,rgb(17, 16, 16),rgb(18, 16, 16),black);"
+>
   <div class="container">
     <h1 class="title"><span class="gradient-text">Services</span></h1>
     <div class="card" onclick="toggleCard(this)">
       <div class="lines"></div>
       <div class="imgBx">
-        <img src="Icons/webdesign.webp" alt="Web Design Image" width="140" height="140" data-astro-cid-6tb5vrp6="">
+        <img
+          src="Icons/webdesign.webp"
+          alt="Web Design Image"
+          width="140"
+          height="140"
+          data-astro-cid-6tb5vrp6=""
+        />
+      </div>
+      <div class="card-title">
+        <h2>Web Design</h2>
       </div>
       <div class="content">
         <div class="details">
-          <h2>Web Design</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.intemporale vinicius domus adentri, floral entonces, rail one day</p>
+          <ul>
+            <li>Responsive Design</li>
+            <li>UI/UX Design</li>
+            <li>eCommerce Solutions</li>
+            <li>SEO Optimization</li>
+          </ul>
           <a href="#">Read More</a>
         </div>
       </div>
@@ -18,12 +33,25 @@
     <div class="card" onclick="toggleCard(this)">
       <div class="lines"></div>
       <div class="imgBx">
-        <img src="Icons/marketing2.webp" alt="Marketing Image" width="140" height="140" data-astro-cid-6tb5vrp6="">
+        <img
+          src="Icons/marketing2.webp"
+          alt="Marketing Image"
+          width="140"
+          height="140"
+          data-astro-cid-6tb5vrp6=""
+        />
+      </div>
+      <div class="card-title">
+        <h2>Marketing</h2>
       </div>
       <div class="content">
         <div class="details">
-          <h2>Marketing</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.intemporale vinicius domus adentri, floral entonces, rail one day</p>
+          <ul>
+            <li>Social Media Marketing</li>
+            <li>Email Campaigns</li>
+            <li>Content Creation</li>
+            <li>Brand Strategy</li>
+          </ul>
           <a href="#">Read More</a>
         </div>
       </div>
@@ -32,12 +60,25 @@
     <div class="card" onclick="toggleCard(this)">
       <div class="lines"></div>
       <div class="imgBx">
-        <img src="Icons/automations3d.webp" alt="Automation Image" width="140" height="140" data-astro-cid-6tb5vrp6="">
+        <img
+          src="Icons/automations3d.webp"
+          alt="Automation Image"
+          width="140"
+          height="140"
+          data-astro-cid-6tb5vrp6=""
+        />
+      </div>
+      <div class="card-title">
+        <h2>Automations</h2>
       </div>
       <div class="content">
         <div class="details">
-          <h2>Automations</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.intemporale vinicius domus adentri, floral entonces, rail one day</p>
+          <ul>
+            <li>Workflow Automation</li>
+            <li>CRM Integration</li>
+            <li>Email Automation</li>
+            <li>Data Analysis</li>
+          </ul>
           <a href="#">Read More</a>
         </div>
       </div>
@@ -45,21 +86,23 @@
   </div>
 
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+    /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      /* background-color: #250511; */
     }
     .title {
-      font-size: 5rem;
+      font-size: 6rem;
       margin-bottom: 2rem;
       text-align: center;
       width: 100%;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
-      margin-top: -70px;
+      margin-top: -250px;
+      letter-spacing: 5px;
     }
 
     .gradient-text {
@@ -78,14 +121,15 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 80px;
+      /* background-color: ; */
     }
 
     .card {
       position: relative;
-      width: 350px;
-      height: 180px;
+      width: 390px;
+      height: 180px; /* Adjusted to provide space for title and icon */
       background: #fff;
-      transition: 0.5s;
+      transition: height 0.5s;
     }
 
     .card:hover {
@@ -110,7 +154,13 @@
       left: 50%;
       width: 600px;
       height: 120px;
-      background: linear-gradient(transparent, #ff1f71, #ff1f71, #ff1f71, transparent);
+      background: linear-gradient(
+        transparent,
+        #ff1f71,
+        #ff1f71,
+        #ff1f71,
+        transparent
+      );
       animation: animate 4s linear infinite;
       animation-play-state: paused;
     }
@@ -140,12 +190,12 @@
       position: absolute;
       top: -60px;
       left: 50%;
-      height: 150px;
-      width: 150px;
+      height: 130px;
+      width: 140px;
       transform: translateX(-50%);
       background: #000;
       transition: 0.5s;
-      z-index: 10;
+      z-index: 10; /* Adjust z-index to keep it above other elements */
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -155,8 +205,8 @@
     .card:hover .imgBx,
     .card.open .imgBx {
       top: 25px;
-      width: 200px;
-      height: 200px;
+      width: 160px;
+      height: 160px;
     }
 
     .card .imgBx::before {
@@ -167,7 +217,13 @@
       width: 500px;
       height: 150px;
       transform: translate(-50%, -50%);
-      background: linear-gradient(transparent, transparent, #ffffff, transparent, transparent);
+      background: linear-gradient(
+        transparent,
+        transparent,
+        #ffffff,
+        transparent,
+        transparent
+      );
       animation: animate2 6s linear infinite;
       animation-play-state: paused;
     }
@@ -195,7 +251,8 @@
 
     .card .imgBx img {
       position: absolute;
-      width: 140px;
+      width: 130px;
+      height: 130px;
       z-index: 1;
       /* filter: invert(1); */
       opacity: 0.5;
@@ -207,18 +264,46 @@
       opacity: 1;
     }
 
+    .card-title {
+      position: absolute;
+      top: 100px; /* Adjust this value to move the title up or down */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2; /* Ensure title is above other elements */
+      width: 100%;
+      text-align: center;
+      transition: top 0.5s;
+    }
+
+    .card:hover .card-title,
+    .card.open .card-title {
+      top: -52px; /* Adjust this value to place between the image and the list */
+      font-size: 1.3em;
+    }
+
+    .card-title h2 {
+      font-size: 2em;
+      font-weight: 500;
+      color: #ff1f71;
+      line-height: 1.2em;
+      /*margin-bottom: 20px; /* Add margin to prevent overlap with list */
+    }
+
     .card .content {
       position: absolute;
       width: 100%;
       height: 100%;
       display: flex;
-      justify-content: center;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
       overflow: hidden;
+      z-index: 1; /* Adjust z-index */
+      background-color: rgba(0, 0, 0, 0.262);
     }
 
     .card .content .details {
-      padding: 30px 20px;
+      padding: 20px 20px;
       text-align: center;
       width: 100%;
       transition: 0.5s;
@@ -227,34 +312,34 @@
 
     .card:hover .content .details,
     .card.open .content .details {
-      transform: translateY(0px);
+      transform: translateY(-30px);
     }
 
-    .card .content .details h2 {
-      font-size: 1.5em;
-      font-weight: 500;
-      color: #ff1f71;
-      line-height: 1.2em;
+    .card .content .details ul {
+      list-style-type: none; /* Remove default list styling */
+      padding: 0;
+      margin: 20px 0 0 0; /* Add margin to space from the title */
+      text-align: center; /* Align text to the center */
+      opacity: 0; /* Hidden by default */
+      transition: opacity 0.5s;
+      color: white; /* Set text color to white */
+      font-size: 1.2rem;
     }
 
-    .card .content .details p {
-      color: #fff;
-      opacity: 0;
-      transition: 0.5s;
+    .card:hover .content .details ul,
+    .card.open .content .details ul {
+      opacity: 1; /* Show on hover */
     }
 
-    .card:hover .content .details p,
-    .card:hover .content .details a,
-    .card.open .content .details p,
-    .card.open .content .details a {
-      opacity: 1;
+    .card .content .details ul li {
+      margin: 10px 0; /* Spacing between list items */
     }
 
     .card .content .details a {
       display: inline-block;
       padding: 8px 15px;
       background: #ff1f71;
-      color: #292929;
+      color: #ffffff;
       margin-top: 10px;
       font-weight: 500;
       text-decoration: none;
@@ -262,19 +347,31 @@
       transition: 0.5s;
     }
 
+    .card:hover .content .details a,
+    .card.open .content .details a {
+      opacity: 1;
+    }
+
     /* Media query for smaller screens */
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
       .title {
-        font-size: 3.5rem; /* Decrease font size on mobile */
+        font-size: 4.5rem; /* Decrease font size on mobile */
+        margin-top: -50px;
+      }
+    }
+    @media (min-width: 800px) {
+      .title {
+        font-size: 4.5rem; /* Decrease font size on mobile */
+        margin-top: -190px;
       }
     }
   </style>
 </div>
 
 <script>
-  function toggleCard(element: HTMLElement) {
+  function toggleCard(element) {
     if (window.innerWidth <= 900) {
-      element.classList.toggle('open');
+      element.classList.toggle("open");
     }
   }
 </script>
