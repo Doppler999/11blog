@@ -7,40 +7,71 @@
     <style>
         body, .hero-section, .hero-text, .typewriter-container, .cta-button-container a {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         .hero-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-rows: 1fr auto 1fr;
+            place-items: center;
             height: 100vh;
             text-align: center;
             color: #fff;
+            background: #000;
             position: relative;
             overflow: hidden;
+            border: 2px solid white; /* Added border to see the grid area */
+        }
+
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .matrix-bg canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin-left: 490px;
         }
 
         .glowing-ring {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 60vw;
+            height: 60vw;
+            max-width: 470px;
+            max-height: 470px;
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
             animation: glow 2s infinite alternate;
-            margin-bottom: 20px; /* Default margin for mobile */
-            margin-top: -100px;
+            margin-top: 10vh;
+            border: 2px solid white; /* Added border to see the element area */
+            z-index: 1; /* Ensure ring is above the canvas */
         }
 
         .glowing-dot {
-            width: 60px;
-            height: 60px;
+            width: 5vw;
+            height: 5vw;
+            max-width: 60px;
+            max-height: 60px;
             border-radius: 50%;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+            border: 2px solid white; /* Added border to see the element area */
         }
 
         @keyframes glow {
@@ -53,16 +84,19 @@
         }
 
         .hero-text {
-            margin-top: 20px;
-            font-size: 1.5rem;
-            text-align: center;
+            font-size: 4vw;
+            max-font-size: 2rem;
+            border: 2px solid white; /* Added border to see the element area */
+            z-index: 1; /* Ensure text is above the canvas */
         }
 
         .typewriter-container {
             display: inline-block;
             position: relative;
-            vertical-align: middle; /* Ensure the container aligns vertically with the text */
-            line-height: 1.5; /* Adjust line-height for better alignment */
+            vertical-align: middle;
+            line-height: 1.5;
+            border: 2px solid white; /* Added border to see the element area */
+            z-index: 1; /* Ensure text is above the canvas */
         }
 
         .typewriter {
@@ -70,16 +104,17 @@
             overflow: hidden;
             white-space: nowrap;
             text-align: left;
-            min-width: 8ch; /* Initial width, will be adjusted dynamically */
-            vertical-align: middle; /* Ensure the text inside aligns vertically */
-            line-height: 1; /* Adjust line-height for better alignment */
+            min-width: 8ch;
+            vertical-align: middle;
+            line-height: 1;
+            border: 2px solid white; /* Added border to see the element area */
         }
 
         #typewriter::after {
             content: '|';
             animation: blink 0.7s infinite;
-            vertical-align: middle; /* Ensure the cursor aligns vertically */
-            line-height: 1.9; /* Adjust line-height for better alignment */
+            vertical-align: middle;
+            line-height: 1.9;
         }
 
         @keyframes blink {
@@ -91,34 +126,18 @@
             }
         }
 
-        .matrix-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: #000000;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .matrix-bg canvas {
-            display: block;
-        }
-
         .cta-button-container {
             position: relative;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 50px;
-            margin: 30px 0;
+            width: 60vw;
+            height: 10vw;
+            max-width: 250px;
+            max-height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 2px solid white; /* Added border to see the element area */
+            z-index: 1; /* Ensure button is above the canvas */
+            margin-bottom: 30vh;
         }
 
         .cta-button-container a {
@@ -126,7 +145,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 60%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -140,7 +159,7 @@
             text-decoration: none;
             overflow: hidden;
             color: #fff;
-            font-weight: 400px;
+            font-weight: 500;
             z-index: 1;
             transition: 0.5s;
             backdrop-filter: blur(15px);
@@ -172,7 +191,7 @@
             position: absolute;
             left: 50%;
             transform: translatex(-50%);
-            bottom: -7px;
+            bottom: -5px;
             width: 30px;
             height: 10px;
             background: #ff1f71;
@@ -210,52 +229,34 @@
         }
 
         @media (min-width: 768px) {
-            .glowing-ring {
-                width: 250px;
-                height: 250px;
-            }
-
-            .glowing-dot {
-                width: 60px;
-                height: 60px;
-            }
-
             .hero-text {
-                font-size: 2.5rem;
+                font-size: 3vw;
+            }
+
+            .glowing-ring {
+                width: 40vw;
+                height: 40vw;
             }
 
             .cta-button-container {
-                width: 300px;
-                height: 60px;
-            }
-
-            .cta-button-container a {
-                font-size: 1.2rem;
+                width: 50vw;
+                height: 8vw;
             }
         }
 
         @media (min-width: 1024px) {
-            .glowing-ring {
-                width: 300px;
-                height: 300px;
-            }
-
-            .glowing-dot {
-                width: 75px;
-                height: 75px;
-            }
-
             .hero-text {
-                font-size: 2.7rem;
+                font-size: 1.5vw;
+            }
+
+            .glowing-ring {
+                width: 50vw;
+                height: 50vw;
             }
 
             .cta-button-container {
-                width: 350px;
-                height: 70px;
-            }
-
-            .cta-button-container a {
-                font-size: 1.4rem;
+                width: 40vw;
+                height: 7vw;
             }
         }
     </style>
@@ -333,7 +334,17 @@
 
         const drops = Array(columns).fill(1);
 
-        function drawMatrix() {
+        // Speed control variable (lower value = faster speed, higher value = slower speed)
+        let speed = 50; // Adjust this value to control the speed of the animation
+        let lastFrameTime = 0;
+
+        function drawMatrix(timestamp) {
+            if (timestamp - lastFrameTime < speed) {
+                requestAnimationFrame(drawMatrix);
+                return;
+            }
+            lastFrameTime = timestamp;
+
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -353,9 +364,11 @@
 
                 drops[x]++;
             });
+
+            requestAnimationFrame(drawMatrix);
         }
 
-        setInterval(drawMatrix, 33);
+        requestAnimationFrame(drawMatrix);
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
