@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle with Blue Light Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #d2c2ff;
+        }
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+        }
+        .circle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 10px solid transparent;
+            border-radius: 50%;
+            box-shadow: 0 0 20px blue;
+            animation: circulate 2s linear infinite;
+        }
+        @keyframes circulate {
+            0% {
+                box-shadow: 0 -20px 20px blue;
+            }
+            25% {
+                box-shadow: 20px 0 20px rgb(0, 255, 255);
+            }
+            50% {
+                box-shadow: 0 20px 20px blue;
+            }
+            75% {
+                box-shadow: -20px 0 20px blue;
+            }
+            100% {
+                box-shadow: 0 -20px 20px blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+</body>
+</html>

@@ -16,13 +16,12 @@
             display: grid;
             grid-template-rows: 1fr auto 1fr;
             place-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
             color: #fff;
             background: #000;
             position: relative;
             overflow: hidden;
-            border: 2px solid white; /* Added border to see the grid area */
         }
 
         .matrix-bg {
@@ -43,31 +42,29 @@
             display: block;
             width: 100%;
             height: 100%;
-            margin-left: 490px;
         }
 
         .glowing-ring {
             position: relative;
-            width: 60vw;
-            height: 60vw;
-            max-width: 470px;
-            max-height: 470px;
+            width: 50vw;
+            height: 50vw;
+            max-width: 600px;
+            max-height: 600px;
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
             animation: glow 2s infinite alternate;
-            margin-top: 10vh;
             border: 2px solid white; /* Added border to see the element area */
             z-index: 1; /* Ensure ring is above the canvas */
         }
 
         .glowing-dot {
-            width: 5vw;
-            height: 5vw;
-            max-width: 60px;
-            max-height: 60px;
+            width: 10vw;
+            height: 10vw;
+            max-width: 80px;
+            max-height: 80px;
             border-radius: 50%;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
@@ -84,7 +81,7 @@
         }
 
         .hero-text {
-            font-size: 4vw;
+            font-size: 6vw;
             max-font-size: 2rem;
             border: 2px solid white; /* Added border to see the element area */
             z-index: 1; /* Ensure text is above the canvas */
@@ -128,16 +125,16 @@
 
         .cta-button-container {
             position: relative;
-            width: 60vw;
+            width: 70vw;
             height: 10vw;
-            max-width: 250px;
-            max-height: 50px;
+            max-width: 300px;
+            max-height: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 2px solid white; /* Added border to see the element area */
             z-index: 1; /* Ensure button is above the canvas */
-            margin-bottom: 30vh;
+            margin-bottom: 10vh;
         }
 
         .cta-button-container a {
@@ -197,7 +194,7 @@
             background: #ff1f71;
             border-radius: 10px;
             transition: 0.5s;
-            transition-delay: 0.5;
+            transition-delay: 0.5s;
         }
 
         .cta-button-container:hover::before {
@@ -218,7 +215,7 @@
             background: #ff1f71;
             border-radius: 10px;
             transition: 0.5s;
-            transition-delay: 0.5;
+            transition-delay: 0.5s;
         }
 
         .cta-button-container:hover::after {
@@ -228,35 +225,108 @@
             border-radius: 30px;
         }
 
+        @media (min-width: 480px) {
+            .hero-text {
+                font-size: 3.5vw;
+            }
+
+            .glowing-ring {
+                width: 55vw;
+                height:55vw;
+                margin-top: 90px;
+            }
+
+            .cta-button-container {
+                width: 60vw;
+                height: 12vw;
+                margin-top: -190px;
+            }
+        }
+
         @media (min-width: 768px) {
             .hero-text {
                 font-size: 3vw;
             }
 
             .glowing-ring {
-                width: 40vw;
-                height: 40vw;
+                width: 35vw;
+                height: 35vw;
+                margin-top: 90px;
             }
 
             .cta-button-container {
                 width: 50vw;
-                height: 8vw;
+                height: 7vw;
+                margin-top: -190px;
             }
         }
 
         @media (min-width: 1024px) {
             .hero-text {
-                font-size: 1.5vw;
+                font-size: 3vw;
             }
 
             .glowing-ring {
-                width: 50vw;
-                height: 50vw;
+                width: 25vw;
+                height: 25vw;
             }
 
             .cta-button-container {
                 width: 40vw;
-                height: 7vw;
+                height: 6vw;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero-text {
+                font-size: 2.5vw;
+            }
+
+            .glowing-ring {
+                width: 25vw;
+                height: 25vw;
+                margin-top: 90px;
+            }
+
+            .cta-button-container {
+                width: 35vw;
+                height: 5vw;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .hero-text {
+                font-size: 2vw;
+            }
+
+            .glowing-ring {
+                width: 25vw;
+                height: 25vw;
+                /* margin-top: 290px; */
+            }
+
+            .cta-button-container {
+                width: 30vw;
+                height: 4.5vw;
+            }
+        }
+
+        @media (min-width: 1700px) {
+            .hero-text {
+                font-size: 1.8vw;
+                margin-top: 20px;
+            }
+
+            .glowing-ring {
+                width: 25vw;
+                height: 25vw;
+                margin-top: 90px;
+            }
+
+            .cta-button-container {
+                width: 25vw;
+                height: 70px;
+                margin-top: -290px;
             }
         }
     </style>
