@@ -2,45 +2,52 @@
 const articles = [
   {
     title: "How to Improve Your SEO",
-    description: "Learn the latest techniques to boost your website's SEO and increase organic traffic.",
+    description:
+      "Learn the latest techniques to boost your website's SEO and increase organic traffic.",
     image: "blog-placeholder-3.jpg",
-    link: "#"
+    link: "#",
   },
   {
     title: "The Future of Web Design",
-    description: "Discover the upcoming trends in web design and how to stay ahead of the curve.",
+    description:
+      "Discover the upcoming trends in web design and how to stay ahead of the curve.",
     image: "blog-placeholder-4.jpg",
-    link: "#"
+    link: "#",
   },
   {
     title: "Content Marketing Strategies",
-    description: "Effective strategies to enhance your content marketing efforts and drive engagement.",
+    description:
+      "Effective strategies to enhance your content marketing efforts and drive engagement.",
     image: "blog-placeholder-5.jpg",
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 ---
 
 <section class="blog-section">
   <h2 class="section-title">Latest Blog Articles</h2>
   <div class="blog-cards">
-    {articles.map((article) => (
-      <div class="blog-card">
-        <img src={article.image} alt={article.title} class="blog-image" />
-        <div class="blog-content">
-          <h3 class="blog-title">{article.title}</h3>
-          <p class="blog-description">{article.description}</p>
-          <a href={article.link} class="blog-link">Read More</a>
+    {
+      articles.map((article) => (
+        <div class="blog-card">
+          <img src={article.image} alt={article.title} class="blog-image" />
+          <div class="blog-content">
+            <h3 class="blog-title">{article.title}</h3>
+            <p class="blog-description">{article.description}</p>
+            <a href={article.link} class="blog-link">
+              Read More
+            </a>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
 
 <style>
   * {
-  outline: 5px solid rgb(255, 162, 0) !important; /* Highlight all elements */
-}
+    outline: 5px solid rgb(255, 162, 0) !important; /* Highlight all elements */
+  }
   .blog-section {
     padding: 50px 0;
     background-color: #111;
@@ -94,7 +101,9 @@ const articles = [
     backdrop-filter: blur(10px);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     width: 400px;
     margin: 10px;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Hero Section</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  .card {
+    flex: 1 1 300px; /* Flex items start at 300px and can grow or shrink */
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  .card h2 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  .card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .card button:hover {
+    background-color: #0056b3;
+  }
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 40px); /* Two cards per row */
+    }
+  }
+  /* Media query for even larger screens */
+  @media (min-width: 1200px) {
+    .card {
+      flex: 1 1 calc(33.333% - 40px); /* Optionally, you can make them smaller for larger screens */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <div class="card">
+    <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+  </div>
+  <div class="card">
+    <h2>Title Here</h2>
+    <button>Click Me</button>
+  </div>
+</div>
+
+</body>
+</html>

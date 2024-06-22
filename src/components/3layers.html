@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card with Layers</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1c1c1c;
+            font-family: Arial, sans-serif;
+        }
+        .section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+        .layer.yellow {
+            background-color: #c8ff00;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 7rem;
+            font-style: oblique;
+            text-align: center;
+            /* display:flex; */
+
+            /* text-transform:capitalize; */
+            text-shadow: #1c1c1c5a 0px 2px 3px;
+            text-decoration:underline;
+            font-weight: bold;
+            padding: 20px;
+
+        }
+        .layer.sonar {
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .sonar {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 0.25px solid rgb(255, 255, 255); /* Thinner and brighter border */
+            background: rgba(175, 175, 175, 0.032);
+            animation: sonar-animation 10s linear infinite;
+        }
+        .sonar:nth-child(1) { animation-delay: 0s; }
+        .sonar:nth-child(2) { animation-delay: 1ms; }
+        .sonar:nth-child(3) { animation-delay: 2ms; }
+        .sonar:nth-child(4) { animation-delay: 3ms; }
+        .sonar:nth-child(5) { animation-delay: 4ms; }
+        .sonar:nth-child(6) { animation-delay: 5ms; }
+        .sonar:nth-child(7) { animation-delay: 6ms; }
+        .sonar:nth-child(8) { animation-delay: 7ms; }
+        .sonar:nth-child(9) { animation-delay: 8ms; }
+        .sonar:nth-child(10) { animation-delay: 9ms; }
+        .sonar:nth-child(11) { animation-delay: 10s; }
+        @keyframes sonar-animation {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(11);
+                opacity: 0;
+            }
+        }
+        .layer.glass {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.5rem;
+            width: 600px;
+            height: 20px;
+        }
+        .layer.glass1 {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             width: 600px;
+            height: 20px;
+            margin-top: 50px;
+        }
+        .layer.glass2 {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             width: 600px;
+            height: 20px;
+            margin-top: 100px;
+        }
+        .layer.glass3 {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             width: 400px;
+            height: 20px;
+            margin-top: 150px;
+        }
+        .layer.glass4 {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             width: 400px;
+            height: 20px;
+            margin-top: 200px;
+        }
+        .layer.glass5 {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             width: 400px;
+            height: 20px;
+            margin-top: 250px;
+        }
+        .layer.glass6 {
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             width: 400px;
+            height: 20px;
+            margin-top: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="card">
+            <div class="layer yellow">
+                hello
+            </div>
+            <div class="layer sonar">
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+                <div class="sonar"></div>
+            </div>
+            <div class="layer glass"></div>
+            <div class="layer glass1"></div>
+            <div class="layer glass2"></div>
+            <div class="layer glass3"></div>
+            <div class="layer glass4"></div>
+            <div class="layer glass5"></div>
+            <div class="layer glass6"></div>
+        </div>
+    </div>
+</body>
+</html>
