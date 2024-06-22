@@ -23,9 +23,6 @@
 </section>
 
 <style>
-  * {
-  outline: 10px solid red !important; /* Highlight all elements */
-}
   .contact-section {
     padding: 50px 0;
     background-color: #111;
@@ -33,12 +30,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 80px;
-    margin-top: 10px;
   }
 
   .section-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     background: linear-gradient(135deg, #e0e0e0, #606060, #e0e0e0);
     -webkit-background-clip: text;
@@ -56,27 +51,22 @@
 
   @media (max-width: 768px) {
     .section-title {
-      font-size: 3.5rem;
+      font-size: 2.9rem;
     }
 
     .connect-text {
       font-size: 1rem;
     }
-
   }
 
   .contact-container {
     width: 90%;
-    max-width: 900px;
-    /* height: 450px; */
+    max-width: 800px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     padding: 20px;
-
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
-    /* margin-left: 20px;
-    margin-right: 20px; */
   }
 
   .contact-form {
@@ -96,7 +86,7 @@
 
   .form-group input,
   .form-group textarea {
-    width: 98%;
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -218,43 +208,11 @@
     box-shadow: 0 0 25px #ff1f71;
   }
 
-  @media (min-width: 1024px) {
-    .contact-container{
-      width: 8%;
-    max-width: 900px;
+  @media (max-width: 768px) {
+    .cta-button {
+      width: 100%;
     }
-    .form-group input,
-  .form-group textarea {
-    width: 9%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 1rem;
-    resize: none;
   }
-
-  }
-
-  @media (min-width: 480px)  {
-    .contact-container{
-      width: 85%;
-    max-width: 900px;
-    }
-    .form-group input,
-  .form-group textarea {
-    width: 95%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 1rem;
-    resize: none;
-  }
-  }
-
 </style>
 
 <script src="/scripts/contact.js" defer></script>
