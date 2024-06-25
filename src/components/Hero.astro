@@ -82,7 +82,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: glow 2s infinite alternate;
+            animation: glow 0s infinite alternate;
         }
 
         .glowing-dot {
@@ -177,6 +177,7 @@
             z-index: 1;
             transition: 0.5s;
             backdrop-filter: blur(15px);
+
         }
 
         .cta-button-container:hover a {
@@ -212,6 +213,7 @@
             border-radius: 10px;
             transition: 0.5s;
             transition-delay: 0.5;
+            box-shadow: 0 0 15px #ff1f71;
         }
 
         .cta-button-container:hover::before {
@@ -219,6 +221,7 @@
             height: 100%;
             width: 80%;
             border-radius: 30px;
+            box-shadow: 0 0 65px #ff1f71;
         }
 
         .cta-button-container::after {
@@ -233,6 +236,7 @@
             border-radius: 10px;
             transition: 0.5s;
             transition-delay: 0.5;
+            box-shadow: 0 0 15px #ff1f71;
         }
 
         .cta-button-container:hover::after {
@@ -240,6 +244,7 @@
             height: 50%;
             width: 80%;
             border-radius: 30px;
+            box-shadow: 0 0 65px #ff1f71;
         }
 
         @media (max-width: 460px) {
